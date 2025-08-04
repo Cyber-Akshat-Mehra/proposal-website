@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ffe6f0, #fff5f7);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #d6336c;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.heart-photo {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    background: url('bhumi.jpg') center/cover no-repeat;
+    clip-path: path("M 100 180 Q 0 100 100 20 Q 200 100 100 180 Z");
+    animation: pulse 2s infinite;
+}
+
+.qualities {
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+.qualities li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.countdown {
+    font-size: 3rem;
+    color: #e83e8c;
+    margin-top: 20px;
+    animation: pulse 1s infinite alternate;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.yes-btn {
+    background-color: #ff69b4;
+    color: white;
+    box-shadow: 0 0 10px #ff69b4;
+}
+
+.no-btn {
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#countdownSection,
+#proposal {
+    display: none;
+    animation: fadeIn 1s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#result {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    color: #e83e8c;
+    display: none;
+}
+
+.heart {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    font-size: 2rem;
+    color: red;
+    animation: fall 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        font-size: 2rem;
+    }
+
+    .heart-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
